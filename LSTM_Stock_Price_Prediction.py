@@ -21,6 +21,7 @@ plt.title('TSMC Close Price History')
 plt.plot(stock_price_data['Close'])
 plt.xlabel('Date', fontsize=18)
 plt.ylabel('Close Price TWD (NTD$)', fontsize=18)
+plt.savefig('TSMC_Close_Price_History.png')
 # plt.show()
 
 # create a new dataframe with only the 'Close' column
@@ -102,7 +103,9 @@ plt.ylabel('Close Price TWD (NTD$)', fontsize=18)
 plt.plot(train['Close'])
 plt.plot(valid[['Close', 'Predictions']])
 plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
+plt.savefig('TSMC_Price_Prediction.png')
 # plt.show()
 
 # show the valid and predicted prices
 print(valid)
+valid.to_csv('TSMC_Price_Prediction.csv')
